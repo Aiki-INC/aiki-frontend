@@ -1,41 +1,29 @@
-# Aiki Frontend
+# Welcome to Aiki
 
-Aiki is an open-source Web3 education platform that allows instructors to create courses, learners to enroll and track progress, and institutions to issue verifiable blockchain-based certificates.
+Follow these steps:
 
-This repository contains the frontend application for the Aiki platform.
+# Step 1: Clone the repository using the project's Git URL.
 
-## What Aiki Does
+git clone https://github.com/godekina/aiki-educa-sphere.git
 
-Aiki helps solve common problems in online learning:
+# Step 2: Navigate to the project directory.
 
-- Learners struggle to prove course completion.
-- Instructors have limited ownership of course records.
-- Certificates are often difficult to verify.
-- Learning platforms rarely reward real learning activity.
+cd aiki
 
-Aiki uses Web3 infrastructure to support:
+# Step 3: Install the necessary dependencies.
 
-- Course discovery
-- Learner enrollment
-- Instructor dashboards
-- Learner progress tracking
-- Certificate verification
-- Future Stellar/Soroban payment and reward flows
+npm i
 
-## Tech Stack
+# Step 4: Start the development server with auto-reloading and an instant preview.
 
-- Next.js
+npm run dev
+
+## What technologies are used for this project?
+
+This project is built with .
+
 - TypeScript
+- React
+- Next.js
+- shadcn-ui
 - Tailwind CSS
-- shadcn/ui
-- wagmi
-- viem
-
-## Project Structure
-
-```text
-aiki/
-  app/
-  components/
-  lib/
-  public/
