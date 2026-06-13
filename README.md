@@ -1,14 +1,22 @@
+<p align="center">
+  <img src="./public/logo2.png" alt="Aiki Logo" width="160" />
+</p>
+
 <h1 align="center">Aiki Frontend</h1>
 
 <p align="center">
   Open-source Web3 education infrastructure for courses, learner dashboards, blockchain certificates, and learning rewards.
 </p>
 
+<p align="center">
+  <strong>Built for Web3 learning today, with a roadmap toward Stellar payments and Soroban-powered certificate verification.</strong>
+</p>
+
 ---
 
 ## Overview
 
-Aiki is an open-source Web3 education platform designed to help instructors create courses, learners track their progress, and communities issue verifiable blockchain-based certificates.
+Aiki is an open-source Web3 education platform designed to help instructors create courses, learners track progress, and communities issue verifiable blockchain-based certificates.
 
 This repository contains the frontend application for the Aiki platform.
 
@@ -18,7 +26,7 @@ Online learning platforms often make it difficult for learners to prove course c
 
 ## Solution
 
-Aiki uses modern frontend tools and Web3 infrastructure to support:
+Aiki provides a modern, wallet-ready learning interface that can support:
 
 - Course discovery
 - Learner enrollment
@@ -30,18 +38,19 @@ Aiki uses modern frontend tools and Web3 infrastructure to support:
 
 ## Features
 
-- Modern responsive user interface
-- Course and learning dashboard pages
-- Wallet-ready Web3 architecture
+- Responsive landing page and dashboard UI
+- Course and project discovery sections
+- Wallet connection interface
 - Reusable UI components
 - Type-safe frontend development
-- Planned Stellar/Soroban support
+- Mock data structure for rapid prototyping
+- Planned Stellar/Soroban integration path
 
 ## Tech Stack
 
 - Next.js
-- TypeScript
 - React
+- TypeScript
 - Tailwind CSS
 - shadcn/ui
 - wagmi
@@ -63,21 +72,21 @@ cd aiki-frontend
 npm install
 ```
 
-### 3. Create environment file
+### 3. Create an environment file
 
-Create a `.env.local` file from the example file:
+Copy the example environment file:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Then update the value if you have a WalletConnect/Reown project ID:
+Then update the values in `.env.local` as needed.
 
 ```env
 NEXT_PUBLIC_PROJECT_ID=your_walletconnect_or_reown_project_id
 ```
 
-If you do not have a project ID yet, the app should still be able to run with MetaMask support if the wallet provider has been configured to make this variable optional.
+> The app should still run without a WalletConnect/Reown project ID if the wallet provider is configured to fall back to MetaMask only.
 
 ### 4. Run the development server
 
@@ -132,7 +141,8 @@ aiki-frontend/
   hooks/            Custom React hooks
   lib/              Utilities and Web3 configuration
   mocks/            Mock data for development
-  public/           Static assets
+  public/           Static assets and images
+  types.ts          Shared TypeScript types
   README.md         Project documentation
   package.json      Project scripts and dependencies
 ```
@@ -141,32 +151,17 @@ aiki-frontend/
 
 Aiki is preparing support for the Stellar ecosystem. Planned work includes:
 
-- Stellar wallet connection research
-- Soroban-based certificate verification
-- Course payment flow using Stellar assets
-- Documentation for Stellar-powered learning rewards
-- Contributor-friendly issues for Stellar Wave
+- Researching Stellar wallet connection options
+- Designing course payment flows using Stellar assets
+- Creating Soroban-based certificate verification documentation
+- Exploring learning rewards and achievement verification on Stellar
+- Creating contributor-friendly issues for GrantFox and Drips Wave
 
 ## Contributing
 
-We welcome contributors.
+We welcome contributors. Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) before starting.
 
-To contribute:
-
-1. Check the open issues.
-2. Comment on the issue you want to work on.
-3. Fork the repository.
-4. Create a new branch.
-5. Make your changes.
-6. Run checks before submitting:
-
-```bash
-npm run lint
-npm run type-check
-npm run build
-```
-
-7. Open a focused pull request with a clear description.
+A good first step is to check the Issues tab, comment on the issue you want to work on, and wait for maintainer confirmation before opening a pull request.
 
 ## Contribution Areas
 
