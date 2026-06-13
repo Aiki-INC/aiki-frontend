@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { notFound } from "next/navigation";
 import { projects } from "@/mocks/projectsData";
 import ProjectDetail from "@/components/project/projectDetails";
@@ -10,9 +7,15 @@ interface Params {
   id: string;
 }
 
-// Create a wrapper component that handles the async params
-function ProjectPageContent({ id }: { id: string }) {
-  const project: Project | undefined = projects.find((p) => p.id === id);
+export const dynamic = "force-dynamic";
+
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { id } = await params;
+  const project: Project | undefined = projects.find((item) => item.id === id);
 
   if (!project) {
     notFound();
@@ -23,10 +26,4 @@ function ProjectPageContent({ id }: { id: string }) {
       <ProjectDetail project={project} subpath="" />
     </div>
   );
-}
-
-// Main component that unwraps the params
-export default function ProjectPage({ params }: { params: Promise<Params> }) {
-  const resolvedParams = React.use(params);
-  return <ProjectPageContent id={resolvedParams.id} />;
 }

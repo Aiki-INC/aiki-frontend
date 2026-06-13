@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { CustomWalletModal } from "@/components/wallet/CustomWalletModal";
 import { ThemeToggle } from "@/components/Toggletheme";
+import Image from "next/image";
 
 export default function CustomWalletDemo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -113,10 +114,13 @@ export default function CustomWalletDemo() {
               <div className="space-y-1">
                 <p className="text-sm font-medium">Wallet Type</p>
                 <div className="flex items-center gap-2">
-                  <img
+                  <Image
                     src={walletIcon}
                     alt={walletName}
+                    width={20}
+                    height={20}
                     className="h-5 w-5 object-contain"
+                    unoptimized
                   />
                   <p className="text-sm text-muted-foreground">{walletName}</p>
                 </div>

@@ -23,7 +23,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import AvatarImg from "@/public/avata.jpg";
 
 const Community = () => {
   const { address } = useAccount();
@@ -228,7 +227,7 @@ const Community = () => {
                   <div className="w-[4.5rem] h-[4.5rem] rounded-full bg-secondary mx-auto flex items-center justify-center">
                     <Avatar className="h-16 w-16">
                       <AvatarImage
-                        src={AvatarImg.src}
+                        src="/avata.jpg"
                         className="rounded-full"
                       />
                       <AvatarFallback className="bg-primary text-primary-foreground">

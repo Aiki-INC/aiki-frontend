@@ -25,19 +25,6 @@ import {
   UserData,
 } from "@/lib/user-storage";
 
-// Wallet download URLs
-const walletDownloadUrls: Record<string, string> = {
-  metaMask: "https://metamask.io/download/",
-  walletConnect: "https://walletconnect.com/",
-  coinbase: "https://www.coinbase.com/wallet/downloads",
-  brave: "https://brave.com/wallet/",
-  argent: "https://www.argent.xyz/download/",
-  rainbow: "https://rainbow.me/",
-  trust: "https://trustwallet.com/download",
-  okx: "https://www.okx.com/web3",
-  imToken: "https://token.im/download",
-  bybit: "https://www.bybit.com/download",
-};
 
 type Step =
   | "selectWallet"
@@ -80,7 +67,6 @@ export const CustomWalletModal = React.memo(function CustomWalletModal({
   );
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [walletAddress, setWalletAddress] = useState<string | null>(null);
 
   // Only get these values if the modal is open
   const { connectors, connectAsync } = useConnect();
@@ -117,7 +103,6 @@ export const CustomWalletModal = React.memo(function CustomWalletModal({
         // Check if the user has connected before
         if (result.accounts[0]) {
           const walletAddress = result.accounts[0];
-          setWalletAddress(walletAddress);
 
           if (hasConnectedBefore(walletAddress)) {
             const userData = getUserData(walletAddress);
@@ -162,7 +147,7 @@ export const CustomWalletModal = React.memo(function CustomWalletModal({
       // Move to password creation step
       setStep("createPassword");
       setError(null);
-    } catch (err) {
+    } catch {
       setError("Failed to verify email. Please try again.");
     } finally {
       setIsProcessing(false);
@@ -186,7 +171,7 @@ export const CustomWalletModal = React.memo(function CustomWalletModal({
       // Move to role selection
       setStep("selectRole");
       setError(null);
-    } catch (err) {
+    } catch {
       setError("Failed to create account. Please try again.");
     } finally {
       setIsProcessing(false);
@@ -230,7 +215,7 @@ export const CustomWalletModal = React.memo(function CustomWalletModal({
           });
         }
       }
-    } catch (err) {
+    } catch {
       setError("Failed to set role. Please try again.");
     } finally {
       setIsProcessing(false);
@@ -357,7 +342,7 @@ export const CustomWalletModal = React.memo(function CustomWalletModal({
                   required
                 />
                 <p className="text-xs text-muted-foreground">
-                  We'll send a verification code to this email
+                  We&apos;ll send a verification code to this email
                 </p>
               </div>
 

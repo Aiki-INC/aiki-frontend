@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { getUserData } from "@/lib/user-storage";
 import { CustomWalletModal } from "@/components/wallet/CustomWalletModal";
-import AvatarImg from "@/public/avata.jpg";
 
 const Profile = () => {
   const { address, isConnected } = useAccount();
@@ -64,7 +63,7 @@ const Profile = () => {
           <div className="bg-primary/10 p-8">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
               <Avatar className="h-24 w-24  border-2 border-sky-400">
-                <AvatarImage src={AvatarImg.src} className="rounded-full" />
+                <AvatarImage src="/avata.jpg" className="rounded-full" />
                 <AvatarFallback className="bg-primary text-primary-foreground text-xl">
                   {userData?.email?.charAt(0).toUpperCase() || "AK"}
                 </AvatarFallback>
