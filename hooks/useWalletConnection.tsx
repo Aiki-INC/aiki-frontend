@@ -25,6 +25,10 @@ export const useWalletConnection = () => {
   const connectWallet = useCallback(
     async (walletType: WalletType, email: string, password: string) => {
       try {
+        if (password.length < 8) {
+          throw new Error("Password must be at least 8 characters");
+        }
+
         setWalletState((prev) => ({
           ...prev,
           status: "connecting",

@@ -1,7 +1,6 @@
 import { Code, GitBranch, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import Logo from "@/public/logo2.png";
 import Image from "next/image";
 function Footer() {
   return (
@@ -12,8 +11,10 @@ function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Link href="/" className="flex items-center gap-2">
                 <Image
-                  src={Logo}
+                  src="/logo2.png"
                   alt="Aiki"
+                  width={64}
+                  height={56}
                   className="w-16 h-14 rounded-lg md:ml-5"
                 />
               </Link>

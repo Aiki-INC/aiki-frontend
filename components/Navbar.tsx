@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, Wallet, X } from "lucide-react";
-import Logo from "@/public/logo2.png";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -65,9 +64,6 @@ const Navbar = () => {
     return location === path;
   };
 
-  const handleLogin = async () => {
-    setIsOpen(false);
-  };
 
   const handleLogout = async () => {
     disconnect();
@@ -121,8 +117,10 @@ const Navbar = () => {
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src={Logo}
+            src="/logo2.png"
             alt="Aiki"
+            width={64}
+            height={56}
             className="w-16 h-14 rounded-lg md:ml-5"
           />
         </Link>

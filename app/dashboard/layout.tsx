@@ -20,7 +20,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useEnsAvatar, useEnsName, useAccount, useDisconnect } from "wagmi";
-import { getUserData, getUserRole } from "@/lib/user-storage";
+import { getUserRole } from "@/lib/user-storage";
 
 export default function DashboardLayout({
   children,
@@ -30,7 +30,6 @@ export default function DashboardLayout({
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [moveHeaderbar, setMoveHeaderbar] = useState(false);
-  const [navbarHeight, setNavbarHeight] = useState(0);
   const location = usePathname();
 
   const { address } = useAccount();
@@ -38,13 +37,6 @@ export default function DashboardLayout({
   const { data: ensName } = useEnsName({ address });
   const { data: ensAvatar } = useEnsAvatar({ name: ensName! });
 
-  useEffect(() => {
-    // Measure navbar height when component mounts
-    const navbar = document.querySelector("header");
-    if (navbar) {
-      setNavbarHeight(navbar.offsetHeight);
-    }
-  }, []);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;

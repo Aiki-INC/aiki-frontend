@@ -21,7 +21,7 @@ interface Wallet {
 }
 
 const SecuritySettings = () => {
-  const { address, isConnected } = useAccount();
+  const { address } = useAccount();
   const { disconnect } = useDisconnect();
   const [showWalletModal, setShowWalletModal] = useState(false);
 

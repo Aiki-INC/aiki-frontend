@@ -65,13 +65,13 @@ npm install
 
 ### 3. Create environment file
 
-Create a `.env.local` file in the root of the project:
+Create a `.env.local` file from the example file:
 
 ```bash
-touch .env.local
+cp .env.example .env.local
 ```
 
-Add the following variable:
+Then update the value if you have a WalletConnect/Reown project ID:
 
 ```env
 NEXT_PUBLIC_PROJECT_ID=your_walletconnect_or_reown_project_id
